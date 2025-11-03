@@ -1,26 +1,27 @@
-# Arabic Learning Game (Vite + React)
+# Arabic Learning Game – Vercel Ready (Vite + React)
 
-## Run locally
+## Local run
 ```bash
 npm install
 npm run dev
 ```
 
-## Build
+## Build (used by Vercel automatically)
 ```bash
 npm run build
 ```
 
-## Deploy to GitHub Pages
-1. Commit & push this project to a GitHub repository (e.g., `arabic-game`).
-2. Make sure the repository's **Settings → Pages** is set to serve from the `gh-pages` branch (it will be created on first deploy).
-3. Build & deploy:
-```bash
-npm run deploy
-```
-This will publish the `dist/` folder to the `gh-pages` branch.
+## Deploy on Vercel (2 easy options)
 
-### IMPORTANT (base path)
-This project sets `base: './'` in `vite.config.js` so it works well on GitHub Pages project sites.
-If you publish to a user site (e.g., `username.github.io`), you can set `base: '/'` instead.
-If you publish under a repository (e.g., `/arabic-game/`), `./` will still work in most cases.
+### Option A: Import from GitHub (recommended)
+1. Create a GitHub repository and push this folder.
+2. On https://vercel.com/new click **Add New... → Project** and select your repo.
+3. Vercel detects **Vite** automatically. Use defaults. Click **Deploy**.
+
+### Option B: Vercel CLI
+```bash
+npm i -g vercel
+vercel
+# accept defaults, then:
+vercel --prod
+```
