@@ -10,7 +10,7 @@ Then set **Settings → Pages → Source: gh-pages / (root)**.
 ### Base path
 This project uses `base: './'` and usually works on GH Pages. If assets 404, set in `vite.config.js`:
 ```js
-base: '/<REPO_NAME>/'
+base: '/arabic.learning.game/'
 ```
 and redeploy.
 
