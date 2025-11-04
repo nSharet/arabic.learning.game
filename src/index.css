@@ -1,0 +1,30 @@
+:root { --bg1:#fde2f3; --bg2:#e7d4ff; --purple:#6b46c1; --purple2:#553c9a; --pink:#f472b6; --blue:#60a5fa; --green:#10b981; --gray:#e5e7eb; --text:#1f2937; }
+*{box-sizing:border-box}
+html,body,#root{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";color:var(--text)}
+.app{min-height:100%;background:linear-gradient(180deg,var(--bg1),var(--bg2));display:flex;align-items:center;justify-content:center;padding:24px}
+.card{width:100%;max-width:900px;background:#ffffffee;border-radius:18px;padding:24px;box-shadow:0 12px 30px rgba(0,0,0,.08)}
+.h1{font-size:28px;margin:0 0 8px;color:#6b21a8;font-weight:800;text-align:center}
+.p{margin:0 0 20px;text-align:center;color:#374151}
+.row{display:flex;gap:10px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}
+.btn{border:0;border-radius:12px;padding:10px 14px;cursor:pointer;font-weight:600}
+.primary{background:var(--purple);color:#fff}
+.primary:hover{background:var(--purple2)}
+.secondary{background:var(--gray)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (min-width:640px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.tile{background:var(--purple);color:#fff;border-radius:14px;padding:12px 10px;font-size:16px;border:0;cursor:pointer}
+.section{margin-top:18px;background:#faf7ff;border-radius:14px;padding:16px;border:1px solid #eee}
+.title2{font-size:22px;margin:0 0 10px;font-weight:800;color:#6b21a8}
+.sm{font-size:12px;color:#6b7280}
+.center{text-align:center}
+.timerWrap{height:8px;background:#eee;border-radius:999px;overflow:hidden;margin:10px 0 16px}
+.timerBar{height:8px;background:linear-gradient(90deg,#34d399,#f43f5e);}
+.options{display:grid;gap:10px}
+.optionRow{display:flex;gap:8px;align-items:stretch}
+.option{flex:1;background:#7c3aed;color:#fff;border:0;padding:10px 12px;border-radius:12px;font-size:16px;cursor:pointer}
+.option:hover{background:#6d28d9}
+.speaker{background:#e0f2fe;border:0;border-radius:12px;padding:8px 10px;cursor:pointer}
+.badge{background:#fef9c3;border-radius:12px;padding:6px 10px;display:inline-block}
+.cardWhite{background:#fff;border-radius:16px;padding:18px;box-shadow:0 6px 16px rgba(0,0,0,.06)}
+.footer{margin-top:20px;text-align:center;font-size:12px;color:#6b7280}
+.feedback{margin-top:12px}

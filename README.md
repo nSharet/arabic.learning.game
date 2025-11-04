@@ -1,14 +1,20 @@
-# Arabic Learning Game – GitHub Pages Ready (Vite + React)
+# Arabic Learning Game – Full (GitHub Pages Ready)
 
-## 🚀 Quick Deploy Steps
-1. צור ריפו חדש ב-GitHub (למשל `arabic-game`).
-2. העלה לשם את כל התוכן מתוך קובץ ה-ZIP.
-3. בטרמינל:
+## Quick Deploy (GitHub Pages)
 ```bash
 npm install
 npm run deploy
 ```
-4. גש ל-Settings → Pages → ודא שענף `gh-pages` פעיל.
-5. האתר יופיע בכתובת: `https://<username>.github.io/arabic-game/`
+Then set **Settings → Pages → Source: gh-pages / (root)**.
 
-Enjoy! 🎉
+### Base path
+This project uses `base: './'` and usually works on GH Pages. If assets 404, set in `vite.config.js`:
+```js
+base: '/<REPO_NAME>/'
+```
+and redeploy.
+
+## Local dev
+```bash
+npm run dev
+```
