@@ -1,4 +1,3 @@
-\
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 function speak(text, lang = 'ar-SA') {
