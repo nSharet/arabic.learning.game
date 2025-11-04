@@ -1,0 +1,47 @@
+name: Check deployed site
+
+on:
+  push:
+    branches:
+      - gh-pages
+
+jobs:
+  verify-pages:
+    name: Verify GitHub Pages deployment
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout gh-pages site to ./site
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: site
+
+      - name: Checkout repository main to ./repo (for helper scripts)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: repo
+
+      - name: Determine deploy URL
+        id: get_url
+        run: |
+          if [ -n "${{ secrets.DEPLOYED_URL }}" ]; then
+            echo "DEPLOY_URL=${{ secrets.DEPLOYED_URL }}" >> $GITHUB_ENV
+          else
+            # Default to https://<owner>.github.io/<repo>
+            OWNER=${GITHUB_REPOSITORY_OWNER}
+            REPO=${GITHUB_REPOSITORY#*/}
+            echo "DEPLOY_URL=https://${OWNER}.github.io/${REPO}" >> $GITHUB_ENV
+          fi
+
+      - name: Show deploy URL
+        run: echo "Will check: $DEPLOY_URL"
+
+      - name: Run deploy checks
+        run: |
+          chmod +x repo/scripts/check-deploy.sh
+          # pass site directory where gh-pages content was checked out
+          repo/scripts/check-deploy.sh "$DEPLOY_URL" "site"
